@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Agreement — SweptLock</title>
+    <meta
+      name="description"
+      content="SweptLock User Agreement and terms of service."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+            },
+            colors: {
+              peach: {
+                50: "#e8eff3",
+                200: "#9bbccc",
+                400: "#4a7a90",
+                500: "#3a6a80",
+                600: "#2d5568",
+              },
+              sand: {
+                50: "#f6f0e9",
+                100: "#f0e8df",
+                200: "#EEEDE8",
+                300: "#E0DFDA",
+                400: "#BDBBB8",
+                500: "#9A9894",
+                600: "#6E6D6B",
+                700: "#4A4A48",
+                800: "#2C2C2A",
+                900: "#1E1E1E",
+                950: "#0D0D0D",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        background-color: #f6f0e9;
+        color: #1e1e1e;
+        font-family: "Inter", system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: #f6f0e9; }
+      ::-webkit-scrollbar-thumb { background: #d4b8a0; border-radius: 3px; }
+
+      @keyframes fade-up {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-up { animation: fade-up 0.7s ease-out both; }
+      .delay-100 { animation-delay: 0.1s; }
+      .delay-200 { animation-delay: 0.2s; }
+      
+      .reveal { opacity: 0; }
+      .reveal.visible { opacity: 1; }
+
+      .nav-blur {
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+      }
+      
+      /* Document specific styling */
+      .legal-doc h2 {
+        color: #1E1E1E;
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+      }
+      .legal-doc p {
+        color: #4A4A48;
+        line-height: 1.75;
+        margin-bottom: 1rem;
+      }
+      .legal-doc ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        color: #4A4A48;
+        margin-bottom: 1rem;
+      }
+      .legal-doc li {
+        margin-bottom: 0.5rem;
+        line-height: 1.75;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav id="navbar" class="fixed top-0 inset-x-0 z-50 nav-blur bg-sand-50/80 border-b border-sand-300/50 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 lg:h-20">
+          <a href="index.html" class="flex items-center gap-2 group">
+            <img src="SLlogo.png" alt="SweptLock Logo" class="h-20 sm:h-30 w-auto object-contain transition-transform group-hover:scale-105" />
+          </a>
+
+          <div class="hidden md:flex items-center gap-8">
+            <a href="index.html#about" class="text-sm font-medium text-sand-600 hover:text-sand-950 transition-colors">About</a>
+            <a href="index.html#security" class="text-sm font-medium text-sand-600 hover:text-sand-950 transition-colors">Security</a>
+            <a href="index.html#features" class="text-sm font-medium text-sand-600 hover:text-sand-950 transition-colors">Features</a>
+            <a href="index.html#contact" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-peach-500 hover:bg-peach-600 text-white text-sm font-semibold transition-colors">
+              Contact Us
+            </a>
+          </div>
+
+          <button id="mobile-menu-btn" class="md:hidden p-2 text-sand-600 hover:text-sand-950" aria-label="Open menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden hidden pb-6 border-t border-sand-300/50 mt-2 pt-4">
+          <div class="flex flex-col gap-4">
+            <a href="index.html#about" class="text-sand-600 font-medium hover:text-sand-950 transition-colors mobile-nav-link">About</a>
+            <a href="index.html#security" class="text-sand-600 font-medium hover:text-sand-950 transition-colors mobile-nav-link">Security</a>
+            <a href="index.html#features" class="text-sand-600 font-medium hover:text-sand-950 transition-colors mobile-nav-link">Features</a>
+            <a href="index.html#contact" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-peach-500 text-white text-sm font-semibold mobile-nav-link">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="pt-32 pb-12 lg:pt-40 lg:pb-16 bg-[#faf4ed]">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <h1 class="reveal animate-fade-up text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-sand-950 mb-4">
+          User Agreement
+        </h1>
+        <p class="reveal animate-fade-up delay-100 text-sm font-medium text-peach-600 tracking-wider uppercase">
+          Last Updated: April 2026
+        </p>
+      </div>
+    </section>
+
+    <section class="pb-24 lg:pb-36 bg-[#faf4ed]">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <div class="reveal animate-fade-up delay-200 bg-white border border-sand-200 shadow-sm rounded-2xl p-8 lg:p-12 legal-doc">
+          
+          <p>
+            Welcome to SweptLock. This User Agreement ("Agreement") governs your access to and use of the SweptLock website (the "Site"). By accessing or using our Site, you agree to be bound by this Agreement. If you do not agree with any part of these terms, you must not use our Site.
+          </p>
+
+          <h2>1. Purpose of the Site</h2>
+          <p>
+            The SweptLock Site is provided for informational purposes, allowing visitors to learn about our next-generation cloud storage and zero-knowledge encryption solutions, and to request product demonstrations or contact our team.
+          </p>
+
+          <h2>2. Intellectual Property</h2>
+          <p>
+            All content, materials, branding, logos, and design elements presented on this Site are the exclusive property of SweptLock and are protected by applicable intellectual property and copyright laws. You may not reproduce, distribute, or create derivative works from any material found on this Site without our prior written consent.
+          </p>
+
+          <h2>3. User Conduct</h2>
+          <p>
+            When interacting with our Site, including filling out contact forms or requesting a demo, you agree to provide accurate and current information. You strictly agree not to:
+          </p>
+          <ul>
+            <li>Use the Site in any way that violates any applicable local, national, or international law.</li>
+            <li>Attempt to interfere with, compromise the system integrity or security, or decipher any transmissions to or from the servers running the Site.</li>
+            <li>Submit any malicious, spam, or automated requests through our contact forms.</li>
+          </ul>
+
+          <h2>4. Disclaimer of Warranties</h2>
+          <p>
+            The Site and its content are provided on an "as is" and "as available" basis. SweptLock makes no representations or warranties of any kind, express or implied, regarding the accuracy, completeness, or availability of the Site.
+          </p>
+
+          <h2>5. Limitation of Liability</h2>
+          <p>
+            To the fullest extent permitted by applicable law, SweptLock shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of, or inability to use, the Site.
+          </p>
+
+          <h2>6. Governing Law</h2>
+          <p>
+            This Agreement shall be governed by and construed in accordance with the laws of the State of Israel, without regard to its conflict of law provisions. Any legal action or proceeding arising under this Agreement will be brought exclusively in the courts located in Israel, and the parties hereby irrevocably consent to the personal jurisdiction and venue therein.
+          </p>
+
+          <h2>7. Changes to This Agreement</h2>
+          <p>
+            We reserve the right to modify or replace this Agreement at any time. Any changes will be updated on this page with a revised "Last Updated" date. Your continued use of the Site after any such changes constitutes your acceptance of the new terms.
+          </p>
+
+          <h2>8. Contact Us</h2>
+          <p>
+            If you have any questions about this User Agreement, please contact us at:<br>
+            <strong>Email:</strong> <a href="mailto:contacts@sweptlock.com" class="text-peach-600 hover:text-peach-800 underline">contact@sweptlock.com</a>
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="relative bg-sand-950 text-sand-400">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12 lg:py-16">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+          <div class="lg:col-span-2">
+            <a href="index.html" class="flex items-center gap-2 mb-6 opacity-90 hover:opacity-100 transition-opacity">
+              <img src="SLlogo.png" alt="SweptLock Logo" class="h-10 sm:h-12 w-auto object-contain" />
+            </a>
+            <p class="text-sm text-sand-500 max-w-xs leading-relaxed">
+              Next-generation cloud storage where uncompromising security meets absolute user control.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-5">Platform</h4>
+            <ul class="space-y-3">
+              <li><a href="index.html#security" class="text-sm text-sand-400 hover:text-white transition-colors">Security</a></li>
+              <li><a href="index.html#features" class="text-sm text-sand-400 hover:text-white transition-colors">Features</a></li>
+              <li><a href="#" class="text-sm text-sand-400 hover:text-white transition-colors">Pricing</a></li>
+              <li><a href="#" class="text-sm text-sand-400 hover:text-white transition-colors">Documentation</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-5">Company</h4>
+            <ul class="space-y-3">
+              <li><a href="index.html#about" class="text-sm text-sand-400 hover:text-white transition-colors">About</a></li>
+              <li><a href="privacy.html" class="text-sm text-sand-400 hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="agreement.html" class="text-sm text-white font-medium hover:text-white transition-colors">User Agreement</a></li>
+              <li><a href="index.html#contact" class="text-sm text-sand-400 hover:text-white transition-colors">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pt-8 border-t border-sand-800/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-xs text-sand-500 font-medium">
+            &copy; 2026 SweptLock. All rights reserved.
+          </p>
+          <div class="flex items-center gap-6">
+            <a href="mailto:contacts@sweptlock.com" class="text-xs text-sand-500 hover:text-white transition-colors font-medium">contacts@sweptlock.com</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Navbar background on scroll
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 10) {
+          navbar.classList.add("shadow-sm", "bg-sand-50/95");
+        } else {
+          navbar.classList.remove("shadow-sm", "bg-sand-50/95");
+        }
+      });
+
+      // Intersection Observer for reveal animations
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px 0px -20px 0px",
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
