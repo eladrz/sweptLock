@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy — SweptLock</title>
+    <meta
+      name="description"
+      content="SweptLock Privacy Policy and data protection practices."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+            },
+            colors: {
+              peach: {
+                50: "#e8eff3",
+                200: "#9bbccc",
+                400: "#4a7a90",
+                500: "#3a6a80",
+                600: "#2d5568",
+              },
+              sand: {
+                50: "#f6f0e9",
+                100: "#f0e8df",
+                200: "#EEEDE8",
+                300: "#E0DFDA",
+                400: "#BDBBB8",
+                500: "#9A9894",
+                600: "#6E6D6B",
+                700: "#4A4A48",
+                800: "#2C2C2A",
+                900: "#1E1E1E",
+                950: "#0D0D0D",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        background-color: #f6f0e9;
+        color: #1e1e1e;
+        font-family: "Inter", system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: #f6f0e9; }
+      ::-webkit-scrollbar-thumb { background: #d4b8a0; border-radius: 3px; }
+
+      @keyframes fade-up {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-up { animation: fade-up 0.7s ease-out both; }
+      .delay-100 { animation-delay: 0.1s; }
+      .delay-200 { animation-delay: 0.2s; }
+      
+      .reveal { opacity: 0; }
+      .reveal.visible { opacity: 1; }
+
+      .nav-blur {
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+      }
+      
+      /* Document specific styling */
+      .legal-doc h2 {
+        color: #1E1E1E;
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      .legal-doc p {
+        color: #4A4A48;
+        line-height: 1.75;
+        margin-bottom: 1rem;
+      }
+      .legal-doc ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        color: #4A4A48;
+        margin-bottom: 1rem;
+      }
+      .legal-doc li {
+        margin-bottom: 0.5rem;
+        line-height: 1.75;
+      }
+      .legal-doc strong {
+        color: #1E1E1E;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav id="navbar" class="fixed top-0 inset-x-0 z-50 nav-blur bg-sand-50/80 border-b border-sand-300/50 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 lg:h-20">
+          <a href="index.html" class="flex items-center gap-2 group">
+            <img src="SLlogo.png" alt="SweptLock Logo" class="h-20 sm:h-30 w-auto object-contain transition-transform group-hover:scale-105" />
+          </a>
+
+          <div class="hidden md:flex items-center gap-8">
+            <a href="index.html#about" class="text-sm font-medium text-sand-600 hover:text-sand-950 transition-colors">About</a>
+            <a href="index.html#security" class="text-sm font-medium text-sand-600 hover:text-sand-950 transition-colors">Security</a>
+            <a href="index.html#features" class="text-sm font-medium text-sand-600 hover:text-sand-950 transition-colors">Features</a>
+            <a href="index.html#contact" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-peach-500 hover:bg-peach-600 text-white text-sm font-semibold transition-colors">
+              Contact Us
+            </a>
+          </div>
+
+          <button id="mobile-menu-btn" class="md:hidden p-2 text-sand-600 hover:text-sand-950" aria-label="Open menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden hidden pb-6 border-t border-sand-300/50 mt-2 pt-4">
+          <div class="flex flex-col gap-4">
+            <a href="index.html#about" class="text-sand-600 font-medium hover:text-sand-950 transition-colors mobile-nav-link">About</a>
+            <a href="index.html#security" class="text-sand-600 font-medium hover:text-sand-950 transition-colors mobile-nav-link">Security</a>
+            <a href="index.html#features" class="text-sand-600 font-medium hover:text-sand-950 transition-colors mobile-nav-link">Features</a>
+            <a href="index.html#contact" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-peach-500 text-white text-sm font-semibold mobile-nav-link">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="pt-32 pb-12 lg:pt-40 lg:pb-16 bg-[#faf4ed]">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <h1 class="reveal animate-fade-up text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-sand-950 mb-4">
+          Privacy Policy
+        </h1>
+        <p class="reveal animate-fade-up delay-100 text-sm font-medium text-peach-600 tracking-wider uppercase">
+          Last Updated: April 2026
+        </p>
+      </div>
+    </section>
+
+    <section class="pb-24 lg:pb-36 bg-[#faf4ed]">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <div class="reveal animate-fade-up delay-200 bg-white border border-sand-200 shadow-sm rounded-2xl p-8 lg:p-12 legal-doc">
+          
+          <p>
+            At SweptLock, we believe that absolute privacy is a fundamental right. This Privacy Policy outlines how we collect, use, protect, and handle your personal information when you use our website (the "Site") and our secure cloud storage services.
+          </p>
+
+          <div class="p-6 bg-peach-50 border border-peach-200 rounded-xl my-8">
+            <h3 class="text-lg font-bold text-sand-950 mb-2">The Zero-Knowledge Guarantee</h3>
+            <p class="mb-0 text-sm">
+              SweptLock operates on a strict zero-knowledge architecture for our Absolute Privacy plan. <strong>We cannot read, scan, or access the contents of the encrypted files you store in our vault.</strong> Your encryption keys remain on your device, ensuring that your sensitive data is technically inaccessible to SweptLock employees, servers, or any third party.
+            </p>
+          </div>
+
+          <h2>1. Information We Collect</h2>
+          <p>We only collect the minimum amount of information necessary to provide and improve our services. This includes:</p>
+          <ul>
+            <li><strong>Information you provide to us:</strong> When you request a demo or fill out a contact form, we collect your name, work email address, company name, and any message you choose to send us.</li>
+            <li><strong>Account Information:</strong> If you register for our platform, we collect standard account details (such as email and billing information). As stated above, this <em>never</em> includes your master encryption keys or unencrypted file data.</li>
+            <li><strong>Automatically Collected Information:</strong> We may collect standard connection data, such as your IP address, browser type, and interaction with our Site, to maintain security and monitor website performance.</li>
+          </ul>
+
+          <h2>2. How We Use Your Information</h2>
+          <p>We use the collected information exclusively for the following purposes:</p>
+          <ul>
+            <li>To respond to your inquiries, schedule demonstrations, and provide customer support.</li>
+            <li>To operate, maintain, and secure our website and cloud infrastructure.</li>
+            <li>To communicate essential updates regarding our platform, security notices, or changes to our policies.</li>
+          </ul>
+
+          <h2>3. Information Sharing and Disclosure</h2>
+          <p>
+            <strong>SweptLock does not and will never sell your personal information to third parties.</strong> We may share minimal data only under the following circumstances:
+          </p>
+          <ul>
+            <li><strong>Service Providers:</strong> We use trusted third-party services (such as Web3Forms for contact form submissions or secure hosting providers) strictly to facilitate our operations. These providers are bound by strict confidentiality agreements.</li>
+            <li><strong>Legal Compliance:</strong> We may disclose account metadata if required to comply with a valid legal obligation. However, because of our zero-knowledge architecture, we are technically incapable of handing over your decrypted files.</li>
+          </ul>
+
+          <h2>4. Data Security</h2>
+          <p>
+            Security is the foundation of SweptLock. We implement enterprise-grade security measures, including TLS for data in transit and AES-256 for data at rest. While no internet transmission is 100% secure, our cryptographic architecture is designed to mathematically prevent unauthorized access to your core data.
+          </p>
+
+          <h2>5. Your Data Protection Rights</h2>
+          <p>
+            Depending on your location (e.g., under GDPR or the Israeli Privacy Protection Law), you have the right to:
+          </p>
+          <ul>
+            <li>Request access to the personal data we hold about you.</li>
+            <li>Request corrections to any inaccurate or incomplete data.</li>
+            <li>Request the deletion of your personal data ("Right to be Forgotten").</li>
+          </ul>
+          <p>To exercise any of these rights, please contact us using the details below.</p>
+
+          <h2>6. Changes to This Privacy Policy</h2>
+          <p>
+            We may update our Privacy Policy periodically to reflect changes in our practices or legal requirements. We will notify you of any material changes by posting the updated policy on this page and updating the "Last Updated" date.
+          </p>
+
+          <h2>7. Contact Us</h2>
+          <p>
+            If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your data, please reach out to our security and compliance team at:<br><br>
+            <strong>Email:</strong> <a href="mailto:contacts@sweptlock.com" class="text-peach-600 hover:text-peach-800 underline">contacts@sweptlock.com</a>
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="relative bg-sand-950 text-sand-400">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12 lg:py-16">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+          <div class="lg:col-span-2">
+            <a href="index.html" class="flex items-center gap-2 mb-6 opacity-90 hover:opacity-100 transition-opacity">
+              <img src="SLlogo.png" alt="SweptLock Logo" class="h-10 sm:h-12 w-auto object-contain" />
+            </a>
+            <p class="text-sm text-sand-500 max-w-xs leading-relaxed">
+              Next-generation cloud storage where uncompromising security meets absolute user control.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-5">Platform</h4>
+            <ul class="space-y-3">
+              <li><a href="index.html#security" class="text-sm text-sand-400 hover:text-white transition-colors">Security</a></li>
+              <li><a href="index.html#features" class="text-sm text-sand-400 hover:text-white transition-colors">Features</a></li>
+              <li><a href="#" class="text-sm text-sand-400 hover:text-white transition-colors">Pricing</a></li>
+              <li><a href="#" class="text-sm text-sand-400 hover:text-white transition-colors">Documentation</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-5">Company</h4>
+            <ul class="space-y-3">
+              <li><a href="index.html#about" class="text-sm text-sand-400 hover:text-white transition-colors">About</a></li>
+              <li><a href="privacy.html" class="text-sm text-white font-medium hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="agreement.html" class="text-sm text-sand-400 hover:text-white transition-colors">User Agreement</a></li>
+              <li><a href="index.html#contact" class="text-sm text-sand-400 hover:text-white transition-colors">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pt-8 border-t border-sand-800/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-xs text-sand-500 font-medium">
+            &copy; 2026 SweptLock. All rights reserved.
+          </p>
+          <div class="flex items-center gap-6">
+            <a href="mailto:contacts@sweptlock.com" class="text-xs text-sand-500 hover:text-white transition-colors font-medium">contacts@sweptlock.com</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 10) {
+          navbar.classList.add("shadow-sm", "bg-sand-50/95");
+        } else {
+          navbar.classList.remove("shadow-sm", "bg-sand-50/95");
+        }
+      });
+
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px 0px -20px 0px",
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
