@@ -1,157 +1,174 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User Agreement — SweptLock</title>
-    <meta
-      name="description"
-      content="SweptLock User Agreement and terms of service."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ["Inter", "system-ui", "sans-serif"],
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Agreement — SweptLock</title>
+  <meta name="description" content="SweptLock User Agreement and terms of service." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "system-ui", "sans-serif"],
+          },
+          colors: {
+            cobalt: {
+              50: "#eff6ff",
+              100: "#dbeafe",
+              200: "#bfdbfe",
+              300: "#93c5fd",
+              400: "#60a5fa",
+              500: "#2563eb",
+              600: "#1d4ed8",
+              700: "#1e40af",
             },
-            colors: {
-              peach: {
-                50: "#e8eff3",
-                200: "#9bbccc",
-                400: "#4a7a90",
-                500: "#3a6a80",
-                600: "#2d5568",
-              },
-              sand: {
-                50: "#f6f0e9",
-                100: "#f0e8df",
-                200: "#EEEDE8",
-                300: "#E0DFDA",
-                400: "#BDBBB8",
-                500: "#9A9894",
-                600: "#6E6D6B",
-                700: "#4A4A48",
-                800: "#2C2C2A",
-                900: "#1E1E1E",
-                950: "#0D0D0D",
-              },
+            slate: {
+              50: "#f8fafc",
+              100: "#f1f5f9",
+              200: "#e2e8f0",
+              300: "#cbd5e1",
+              400: "#94a3b8",
+              500: "#64748b",
+              600: "#475569",
+              700: "#334155",
+              800: "#1e293b",
+              900: "#0f172a",
+              950: "#020617",
             },
           },
         },
-      };
-    </script>
-    <style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body {
-        background-color: #f6f0e9;
-        color: #1e1e1e;
-        font-family: "Inter", system-ui, sans-serif;
-        -webkit-font-smoothing: antialiased;
-      }
-      ::-webkit-scrollbar { width: 6px; }
-      ::-webkit-scrollbar-track { background: #f6f0e9; }
-      ::-webkit-scrollbar-thumb { background: #d4b8a0; border-radius: 3px; }
+      },
+    };
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: #f8fafc;
+      color: #0f172a;
+      font-family: "Inter", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f8fafc; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
 
-      @keyframes fade-up {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-      .animate-fade-up { animation: fade-up 0.7s ease-out both; }
-      .delay-100 { animation-delay: 0.1s; }
-      .delay-200 { animation-delay: 0.2s; }
-      
-      .reveal { opacity: 0; }
-      .reveal.visible { opacity: 1; }
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-up { animation: fade-up 0.7s ease-out both; }
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
 
-      .nav-blur {
-        backdrop-filter: blur(16px) saturate(180%);
-        -webkit-backdrop-filter: blur(16px) saturate(180%);
-      }
-      
-      /* Document specific styling */
-      .legal-doc h2 {
-        color: #1E1E1E;
-        font-size: 1.25rem;
-        font-weight: 700;
-        margin-top: 2rem;
-        margin-bottom: 0.75rem;
-      }
-      .legal-doc p {
-        color: #4A4A48;
-        line-height: 1.75;
-        margin-bottom: 1rem;
-      }
-      .legal-doc ul {
-        list-style-type: disc;
-        padding-left: 1.5rem;
-        color: #4A4A48;
-        margin-bottom: 1rem;
-      }
-      .legal-doc li {
-        margin-bottom: 0.5rem;
-        line-height: 1.75;
-      }
-    </style>
-  </head>
+    .reveal { opacity: 0; }
+    .reveal.visible { opacity: 1; }
 
-  <body>
-    <nav id="navbar" class="fixed top-0 inset-x-0 z-50 nav-blur bg-sand-50/80 border-b border-sand-300/50 transition-all duration-300">
+    .nav-blur {
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+    }
+
+    .stroke-card {
+      background: #ffffff;
+      border: 0.5px solid #cbd5e1;
+      box-shadow: 6px 6px 0px 0px #e2e8f0;
+    }
+
+    .legal-doc h2 {
+      color: #0f172a;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .legal-doc p {
+      color: #334155;
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+    .legal-doc ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      color: #334155;
+      margin-bottom: 1rem;
+    }
+    .legal-doc li {
+      margin-bottom: 0.5rem;
+      line-height: 1.75;
+    }
+    .legal-doc strong { color: #0f172a; }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
+  <header>
+    <nav id="navbar"
+      class="fixed top-0 inset-x-0 z-50 nav-blur bg-slate-50/80 border-b border-slate-300/50 transition-all duration-300"
+      role="navigation" aria-label="Main Navigation">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="flex items-center justify-between h-16 lg:h-20">
-          <a href="index.html" class="flex items-center gap-2 group">
-            <img src="SLlogo.png" alt="SweptLock Logo" class="h-20 sm:h-30 w-auto object-contain transition-transform group-hover:scale-105" />
+          <a href="index.html" class="flex items-center gap-2 group" aria-label="SweptLock Home">
+            <img src="SLlogo.png" alt="SweptLock Logo"
+              class="h-20 sm:h-30 w-auto object-contain transition-transform group-hover:scale-105" />
           </a>
 
           <div class="hidden md:flex items-center gap-8">
-            <a href="index.html#about" class="text-sm font-medium text-sand-600 hover:text-sand-950 transition-colors">About</a>
-            <a href="index.html#security" class="text-sm font-medium text-sand-600 hover:text-sand-950 transition-colors">Security</a>
-            <a href="index.html#features" class="text-sm font-medium text-sand-600 hover:text-sand-950 transition-colors">Features</a>
-            <a href="index.html#contact" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-peach-500 hover:bg-peach-600 text-white text-sm font-semibold transition-colors">
+            <a href="index.html#about" class="text-sm font-medium text-slate-600 hover:text-slate-950 transition-colors">About</a>
+            <a href="index.html#security" class="text-sm font-medium text-slate-600 hover:text-slate-950 transition-colors">Security</a>
+            <a href="index.html#features" class="text-sm font-medium text-slate-600 hover:text-slate-950 transition-colors">Features</a>
+            <a href="index.html#contact"
+              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-cobalt-500 hover:bg-cobalt-600 text-white text-sm font-semibold transition-colors">
               Contact Us
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
             </a>
           </div>
 
-          <button id="mobile-menu-btn" class="md:hidden p-2 text-sand-600 hover:text-sand-950" aria-label="Open menu">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 hover:text-slate-950" aria-label="Open menu"
+            aria-expanded="false" aria-controls="mobile-menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
         </div>
 
-        <div id="mobile-menu" class="md:hidden hidden pb-6 border-t border-sand-300/50 mt-2 pt-4">
+        <div id="mobile-menu" class="md:hidden hidden pb-6 border-t border-slate-300/50 mt-2 pt-4">
           <div class="flex flex-col gap-4">
-            <a href="index.html#about" class="text-sand-600 font-medium hover:text-sand-950 transition-colors mobile-nav-link">About</a>
-            <a href="index.html#security" class="text-sand-600 font-medium hover:text-sand-950 transition-colors mobile-nav-link">Security</a>
-            <a href="index.html#features" class="text-sand-600 font-medium hover:text-sand-950 transition-colors mobile-nav-link">Features</a>
-            <a href="index.html#contact" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-peach-500 text-white text-sm font-semibold mobile-nav-link">Contact Us</a>
+            <a href="index.html#about" class="text-slate-600 font-medium hover:text-slate-950 transition-colors mobile-nav-link">About</a>
+            <a href="index.html#security" class="text-slate-600 font-medium hover:text-slate-950 transition-colors mobile-nav-link">Security</a>
+            <a href="index.html#features" class="text-slate-600 font-medium hover:text-slate-950 transition-colors mobile-nav-link">Features</a>
+            <a href="index.html#contact" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-cobalt-500 text-white text-sm font-semibold mobile-nav-link">Contact Us</a>
           </div>
         </div>
       </div>
     </nav>
+  </header>
 
-    <section class="pt-32 pb-12 lg:pt-40 lg:pb-16 bg-[#faf4ed]">
+  <main id="main-content">
+    <section class="pt-32 pb-12 lg:pt-40 lg:pb-16 bg-slate-50">
       <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-        <h1 class="reveal animate-fade-up text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-sand-950 mb-4">
+        <h1 class="reveal animate-fade-up text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-950 mb-4">
           User Agreement
         </h1>
-        <p class="reveal animate-fade-up delay-100 text-sm font-medium text-peach-600 tracking-wider uppercase">
+        <p class="reveal animate-fade-up delay-100 text-sm font-medium text-cobalt-600 tracking-wider uppercase">
           Last Updated: April 2026
         </p>
       </div>
     </section>
 
-    <section class="pb-24 lg:pb-36 bg-[#faf4ed]">
+    <section class="pb-24 lg:pb-36 bg-slate-50">
       <div class="max-w-4xl mx-auto px-6 lg:px-8">
-        <div class="reveal animate-fade-up delay-200 bg-white border border-sand-200 shadow-sm rounded-2xl p-8 lg:p-12 legal-doc">
-          
+        <div class="reveal animate-fade-up delay-200 stroke-card rounded-2xl p-8 lg:p-12 legal-doc">
+
           <p>
             Welcome to SweptLock. This User Agreement ("Agreement") governs your access to and use of the SweptLock website (the "Site"). By accessing or using our Site, you agree to be bound by this Agreement. If you do not agree with any part of these terms, you must not use our Site.
           </p>
@@ -199,92 +216,84 @@
           <h2>8. Contact Us</h2>
           <p>
             If you have any questions about this User Agreement, please contact us at:<br>
-            <strong>Email:</strong> <a href="mailto:contacts@sweptlock.com" class="text-peach-600 hover:text-peach-800 underline">contact@sweptlock.com</a>
+            <strong>Email:</strong> <a href="mailto:contacts@sweptlock.com" class="text-cobalt-600 hover:text-cobalt-700 underline">contacts@sweptlock.com</a>
           </p>
 
         </div>
       </div>
     </section>
+  </main>
 
-    <footer class="relative bg-sand-950 text-sand-400">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12 lg:py-16">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-          <div class="lg:col-span-2">
-            <a href="index.html" class="flex items-center gap-2 mb-6 opacity-90 hover:opacity-100 transition-opacity">
-              <img src="SLlogo.png" alt="SweptLock Logo" class="h-10 sm:h-12 w-auto object-contain" />
-            </a>
-            <p class="text-sm text-sand-500 max-w-xs leading-relaxed">
-              Next-generation cloud storage where uncompromising security meets absolute user control.
-            </p>
-          </div>
-
-          <div>
-            <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-5">Platform</h4>
-            <ul class="space-y-3">
-              <li><a href="index.html#security" class="text-sm text-sand-400 hover:text-white transition-colors">Security</a></li>
-              <li><a href="index.html#features" class="text-sm text-sand-400 hover:text-white transition-colors">Features</a></li>
-              <li><a href="#" class="text-sm text-sand-400 hover:text-white transition-colors">Pricing</a></li>
-              <li><a href="#" class="text-sm text-sand-400 hover:text-white transition-colors">Documentation</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-5">Company</h4>
-            <ul class="space-y-3">
-              <li><a href="index.html#about" class="text-sm text-sand-400 hover:text-white transition-colors">About</a></li>
-              <li><a href="privacy.html" class="text-sm text-sand-400 hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="agreement.html" class="text-sm text-white font-medium hover:text-white transition-colors">User Agreement</a></li>
-              <li><a href="index.html#contact" class="text-sm text-sand-400 hover:text-white transition-colors">Contact</a></li>
-            </ul>
-          </div>
+  <footer class="relative bg-slate-950 text-slate-400" role="contentinfo">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12 lg:py-16">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div class="lg:col-span-2">
+          <a href="index.html" class="flex items-center gap-2 mb-6 opacity-90 hover:opacity-100 transition-opacity" aria-label="SweptLock Home">
+            <img src="SLlogo.png" alt="SweptLock Logo" class="h-10 sm:h-12 w-auto object-contain" />
+          </a>
+          <p class="text-sm text-slate-500 max-w-xs leading-relaxed">
+            Next-generation cloud storage where uncompromising security meets absolute user control.
+          </p>
         </div>
 
-        <div class="pt-8 border-t border-sand-800/50 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p class="text-xs text-sand-500 font-medium">
-            &copy; 2026 SweptLock. All rights reserved.
-          </p>
-          <div class="flex items-center gap-6">
-            <a href="mailto:contacts@sweptlock.com" class="text-xs text-sand-500 hover:text-white transition-colors font-medium">contacts@sweptlock.com</a>
-          </div>
+        <nav aria-label="Platform Links">
+          <h2 class="text-xs font-bold text-white uppercase tracking-wider mb-5">Platform</h2>
+          <ul class="space-y-3">
+            <li><a href="index.html#security" class="text-sm text-slate-400 hover:text-white transition-colors">Security</a></li>
+            <li><a href="index.html#features" class="text-sm text-slate-400 hover:text-white transition-colors">Features</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Company Links">
+          <h2 class="text-xs font-bold text-white uppercase tracking-wider mb-5">Company</h2>
+          <ul class="space-y-3">
+            <li><a href="index.html#about" class="text-sm text-slate-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="Privacy_Policy.html" class="text-sm text-slate-400 hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="agreement.html" class="text-sm text-white font-medium hover:text-white transition-colors">User Agreement</a></li>
+            <li><a href="index.html#contact" class="text-sm text-slate-400 hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="pt-8 border-t border-slate-800/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-slate-500 font-medium">
+          &copy; 2026 SweptLock. All rights reserved.
+        </p>
+        <div class="flex items-center gap-6">
+          <a href="mailto:contacts@sweptlock.com" class="text-xs text-slate-500 hover:text-white transition-colors font-medium">contacts@sweptlock.com</a>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <script>
-      // Mobile menu toggle
-      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-      const mobileMenu = document.getElementById("mobile-menu");
-      mobileMenuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
+  <script>
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    mobileMenuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
 
-      // Navbar background on scroll
-      const navbar = document.getElementById("navbar");
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 10) {
-          navbar.classList.add("shadow-sm", "bg-sand-50/95");
-        } else {
-          navbar.classList.remove("shadow-sm", "bg-sand-50/95");
+    const navbar = document.getElementById("navbar");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 10) {
+        navbar.classList.add("shadow-sm", "bg-slate-50/95");
+        navbar.classList.remove("bg-slate-50/80");
+      } else {
+        navbar.classList.remove("shadow-sm", "bg-slate-50/95");
+        navbar.classList.add("bg-slate-50/80");
+      }
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
         }
       });
+    }, { root: null, rootMargin: "0px 0px -20px 0px", threshold: 0.1 });
 
-      // Intersection Observer for reveal animations
-      const observerOptions = {
-        root: null,
-        rootMargin: "0px 0px -20px 0px",
-        threshold: 0.1,
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
-
-      document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-    </script>
-  </body>
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  </script>
+</body>
 </html>
