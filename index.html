@@ -1123,6 +1123,7 @@
                 Policy</a></li>
             <li><a href="agreement.html" class="text-sm text-slate-400 hover:text-white transition-colors">User
                 Agreement</a></li>
+            <li><a href="accessibility.html" class="text-sm text-slate-400 hover:text-white transition-colors">Accessibility Statement</a></li>
             <li><a href="#contact" class="text-sm text-slate-400 hover:text-white transition-colors">Contact</a></li>
           </ul>
         </nav>
@@ -1149,39 +1150,95 @@
       const baseSpeed = 0;
 
       let activeCard = null;
+      let activeCardIndex = -1;
       let targetAngle = null;
 
-      cards.forEach((card, index) => {
-        const offset = (index / cards.length) * Math.PI * 2;
+      let isDragging = false;
+      let startX = 0;
+      let currentX = 0;
+      const dragThreshold = 50;
 
-        const focusCard = () => {
-          activeCard = card;
-          let idealTarget = (Math.PI / 2) - offset;
-          let normalizedCurrent = currentGlobalAngle % (Math.PI * 2);
-          let diff = idealTarget - normalizedCurrent;
-          diff = ((diff + Math.PI) % (Math.PI * 2) + Math.PI * 2) % (Math.PI * 2) - Math.PI;
-          targetAngle = currentGlobalAngle + diff;
-        };
+      const focusCardByIndex = (index) => {
+        let newIndex = index % cards.length;
+        if (newIndex < 0) newIndex += cards.length;
+        activeCardIndex = newIndex;
+        activeCard = cards[newIndex];
+        const offset = (newIndex / cards.length) * Math.PI * 2;
+        let idealTarget = (Math.PI / 2) - offset;
+        let normalizedCurrent = currentGlobalAngle % (Math.PI * 2);
+        let diff = idealTarget - normalizedCurrent;
+        diff = ((diff + Math.PI) % (Math.PI * 2) + Math.PI * 2) % (Math.PI * 2) - Math.PI;
+        targetAngle = currentGlobalAngle + diff;
+      };
+
+      cards.forEach((card, index) => {
+        // Fix shrinking bug by managing transform directly in JS without CSS transition delays
+        card.style.transitionProperty = 'background-color, border-color, box-shadow, filter, opacity';
+        card.style.transitionDuration = '300ms';
+        card.currentFocusScale = 1.0;
 
         card.addEventListener('mouseenter', () => {
           if (!activeCard) {
-            focusCard();
+            focusCardByIndex(index);
           }
         });
 
         card.addEventListener('click', () => {
-          focusCard();
+          focusCardByIndex(index);
         });
 
         // Keyboard accessibility for buttons
         card.addEventListener('focus', () => {
-          focusCard();
+          focusCardByIndex(index);
         });
       });
 
+      const handleDragStart = (e) => {
+        isDragging = true;
+        startX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+      };
+
+      const handleDragMove = (e) => {
+        if (!isDragging) return;
+        currentX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+        const deltaX = currentX - startX;
+        
+        // Prevent default scrolling only when actively dragging horizontally
+        if (Math.abs(deltaX) > 10 && e.cancelable) {
+          e.preventDefault();
+        }
+
+        if (Math.abs(deltaX) > dragThreshold) {
+          let baseIndex = activeCardIndex === -1 ? 0 : activeCardIndex;
+          if (deltaX > 0) {
+            // Dragged right, go to previous card
+            focusCardByIndex(baseIndex - 1);
+          } else {
+            // Dragged left, go to next card
+            focusCardByIndex(baseIndex + 1);
+          }
+          // Reset startX to prevent multiple triggers in one long swipe
+          startX = currentX;
+        }
+      };
+
+      const handleDragEnd = () => {
+        isDragging = false;
+      };
+
+      container.addEventListener('mousedown', handleDragStart);
+      container.addEventListener('mousemove', handleDragMove, { passive: false });
+      window.addEventListener('mouseup', handleDragEnd);
+
+      container.addEventListener('touchstart', handleDragStart, { passive: true });
+      container.addEventListener('touchmove', handleDragMove, { passive: false });
+      container.addEventListener('touchend', handleDragEnd);
+
       container.addEventListener('mouseleave', () => {
+        isDragging = false;
         activeCard = null;
         targetAngle = null;
+        activeCardIndex = -1;
       });
 
       function animateOrbit() {
@@ -1205,8 +1262,12 @@
           const baseScale = ((y + radiusY) / (radiusY * 2)) * 0.4 + 0.6;
           const isFocused = (card === activeCard);
 
+          // Smoothly interpolate scale in JS to prevent transform shrinking
+          const targetFocusScale = isFocused ? 1.05 : 1.0;
+          card.currentFocusScale += (targetFocusScale - card.currentFocusScale) * 0.15;
+
           const zIndex = isFocused ? 999 : Math.round(baseScale * 100);
-          const scale = isFocused ? baseScale * 1.05 : baseScale;
+          const scale = baseScale * card.currentFocusScale;
           const opacity = isFocused ? 1 : (baseScale < 0.8 ? 0.4 + ((baseScale - 0.6) * 1.5) : 1);
           const blurEffect = isFocused ? 'blur(0px)' : (baseScale < 0.75 ? 'blur(2px)' : 'blur(0px)');
 
