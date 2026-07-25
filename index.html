@@ -12,6 +12,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Centralized app-URL config: single source of truth for the app login URL.
+       Decoupled from the app — the site only navigates to it. See js/config.js. -->
+  <script defer src="js/config.js"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -261,17 +264,30 @@
               class="h-20 sm:h-30 w-auto object-contain transition-transform group-hover:scale-105" />
           </a>
 
-          <div class="hidden md:flex items-center gap-8">
+          <div class="hidden md:flex items-center gap-6 lg:gap-8">
             <a href="#about" class="text-sm font-medium text-slate-600 hover:text-slate-950 transition-colors">About</a>
             <a href="#security"
               class="text-sm font-medium text-slate-600 hover:text-slate-950 transition-colors">Security</a>
             <a href="#features"
               class="text-sm font-medium text-slate-600 hover:text-slate-950 transition-colors">Features</a>
             <a href="#contact"
-              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-cobalt-500 hover:bg-cobalt-600 text-white text-sm font-semibold transition-colors">
-              Contact Us
+              class="text-sm font-medium text-slate-600 hover:text-slate-950 transition-colors">Contact</a>
+
+            <!-- App entry points. href is set from js/config.js (single source of truth). -->
+            <a href="#" data-app-link data-app-action="login" aria-label="Log in to the SweptLock app"
+              class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-cobalt-600 hover:bg-slate-100 transition-colors">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
                 aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m-3-3H2.25m0 0l3-3m-3 3l3 3" />
+              </svg>
+              Login
+            </a>
+            <a href="#" data-app-link data-app-action="get-started" aria-label="Get started with the SweptLock app"
+              class="group inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-cobalt-500 hover:bg-cobalt-600 text-white text-sm font-semibold transition-colors">
+              Get Started
+              <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor"
+                stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </a>
@@ -295,8 +311,21 @@
             <a href="#features"
               class="text-slate-600 font-medium hover:text-slate-950 transition-colors mobile-nav-link">Features</a>
             <a href="#contact"
-              class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-cobalt-500 text-white text-sm font-semibold mobile-nav-link">Contact
-              Us</a>
+              class="text-slate-600 font-medium hover:text-slate-950 transition-colors mobile-nav-link">Contact</a>
+
+            <!-- App entry points. href is set from js/config.js (single source of truth). -->
+            <a href="#" data-app-link data-app-action="login" aria-label="Log in to the SweptLock app"
+              class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg border border-cobalt-500 text-cobalt-600 hover:bg-cobalt-50 text-sm font-semibold transition-colors">
+              Login
+            </a>
+            <a href="#" data-app-link data-app-action="get-started" aria-label="Get started with the SweptLock app"
+              class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-cobalt-500 hover:bg-cobalt-600 text-white text-sm font-semibold transition-colors">
+              Get Started
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
           </div>
         </div>
       </div>
@@ -331,13 +360,27 @@
           </p>
 
           <div class="reveal animate-fade-up delay-300 flex flex-col sm:flex-row gap-4">
-            <a href="#contact"
+            <!-- Primary app entry point. href is set from js/config.js (single source of truth). -->
+            <a href="#" data-app-link data-app-action="get-started" aria-label="Get started with the SweptLock app"
               class="group inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-cobalt-500 hover:bg-cobalt-600 text-white font-semibold text-sm transition-all shadow-sm">
-              Contact Us
+              Get Started
               <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor"
                 stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
+            </a>
+            <a href="#" data-app-link data-app-action="login" aria-label="Log in to the SweptLock app"
+              class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg border border-cobalt-500 text-cobalt-600 hover:bg-cobalt-50 font-semibold text-sm transition-all">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m-3-3H2.25m0 0l3-3m-3 3l3 3" />
+              </svg>
+              Login
+            </a>
+            <a href="#contact"
+              class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg text-slate-700 hover:text-cobalt-600 hover:bg-slate-100 font-semibold text-sm transition-all">
+              Contact Us
             </a>
           </div>
 
@@ -1112,6 +1155,11 @@
           <ul class="space-y-3">
             <li><a href="#security" class="text-sm text-slate-400 hover:text-white transition-colors">Security</a></li>
             <li><a href="#features" class="text-sm text-slate-400 hover:text-white transition-colors">Features</a></li>
+            <!-- App entry point. href is set from js/config.js (single source of truth). -->
+            <li><a href="#" data-app-link data-app-action="open-app" aria-label="Open the SweptLock app"
+                class="text-sm text-slate-400 hover:text-white transition-colors">Open App</a></li>
+            <li><a href="#" data-app-link data-app-action="login" aria-label="Log in to the SweptLock app"
+                class="text-sm text-slate-400 hover:text-white transition-colors">Login</a></li>
           </ul>
         </nav>
 
