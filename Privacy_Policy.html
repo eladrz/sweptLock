@@ -10,43 +10,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ["Inter", "system-ui", "sans-serif"],
-          },
-          colors: {
-            cobalt: {
-              50: "#eff6ff",
-              100: "#dbeafe",
-              200: "#bfdbfe",
-              300: "#93c5fd",
-              400: "#60a5fa",
-              500: "#2563eb",
-              600: "#1d4ed8",
-              700: "#1e40af",
-            },
-            slate: {
-              50: "#f8fafc",
-              100: "#f1f5f9",
-              200: "#e2e8f0",
-              300: "#cbd5e1",
-              400: "#94a3b8",
-              500: "#64748b",
-              600: "#475569",
-              700: "#334155",
-              800: "#1e293b",
-              900: "#0f172a",
-              950: "#020617",
-            },
-          },
-        },
-      },
-    };
-  </script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -106,6 +69,9 @@
     }
     .legal-doc strong { color: #0f172a; }
   </style>
+  <!-- Built from tailwind.config.js. After adding new Tailwind classes, rebuild with:
+       npx tailwindcss@3 -i tailwind.input.css -o tailwind.css --minify -->
+  <link rel="stylesheet" href="tailwind.css" />
 </head>
 
 <body class="bg-slate-50 text-slate-900 font-sans antialiased">

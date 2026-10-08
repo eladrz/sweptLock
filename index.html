@@ -11,43 +11,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ["Inter", "system-ui", "sans-serif"],
-          },
-          colors: {
-            cobalt: {
-              50: "#eff6ff",
-              100: "#dbeafe",
-              200: "#bfdbfe",
-              300: "#93c5fd",
-              400: "#60a5fa",
-              500: "#2563eb",
-              600: "#1d4ed8",
-              700: "#1e40af",
-            },
-            slate: {
-              50: "#f8fafc",
-              100: "#f1f5f9",
-              200: "#e2e8f0",
-              300: "#cbd5e1",
-              400: "#94a3b8",
-              500: "#64748b",
-              600: "#475569",
-              700: "#334155",
-              800: "#1e293b",
-              900: "#0f172a",
-              950: "#020617",
-            },
-          },
-        },
-      },
-    };
-  </script>
   <style>
     * {
       margin: 0;
@@ -191,17 +154,25 @@
       animation-delay: 0.3s;
     }
 
+    .delay-400 {
+      animation-delay: 0.4s;
+    }
+
     .delay-500 {
       animation-delay: 0.5s;
     }
 
-    /* Intersection Observer: hidden until visible */
-    .reveal {
+    /* Intersection Observer: entrance animation is held until the element is visible */
+    .js .reveal:not(.visible) {
       opacity: 0;
+      animation-play-state: paused;
     }
 
-    .reveal.visible {
-      opacity: 1;
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        animation: none !important;
+        opacity: 1 !important;
+      }
     }
 
     /* Stroke-shadow cards */
@@ -242,6 +213,10 @@
       background: linear-gradient(to right, transparent, #bdbbb8, transparent);
     }
   </style>
+  <!-- Built from tailwind.config.js. After adding new Tailwind classes, rebuild with:
+       npx tailwindcss@3 -i tailwind.input.css -o tailwind.css --minify -->
+  <link rel="stylesheet" href="tailwind.css" />
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 
 <body class="bg-slate-50 text-slate-900 font-sans antialiased">
@@ -258,15 +233,15 @@
         <div class="flex items-center justify-between h-16 lg:h-20">
           <a href="#" class="flex items-center gap-2 group" aria-label="SweptLock Home">
             <img src="SLlogo.png" alt="SweptLock Logo"
-              class="h-20 sm:h-30 w-auto object-contain transition-transform group-hover:scale-105" />
+              class="h-20 w-auto object-contain transition-transform group-hover:scale-105" />
           </a>
 
           <div class="hidden md:flex items-center gap-8">
-            <a href="#about" class="text-sm font-medium text-slate-600 hover:text-slate-950 transition-colors">About</a>
             <a href="#security"
               class="text-sm font-medium text-slate-600 hover:text-slate-950 transition-colors">Security</a>
             <a href="#features"
               class="text-sm font-medium text-slate-600 hover:text-slate-950 transition-colors">Features</a>
+            <a href="#about" class="text-sm font-medium text-slate-600 hover:text-slate-950 transition-colors">About</a>
             <a href="#contact"
               class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-cobalt-500 hover:bg-cobalt-600 text-white text-sm font-semibold transition-colors">
               Contact Us
@@ -288,12 +263,12 @@
 
         <div id="mobile-menu" class="md:hidden hidden pb-6 border-t border-slate-300/50 mt-2 pt-4">
           <div class="flex flex-col gap-4">
-            <a href="#about"
-              class="text-slate-600 font-medium hover:text-slate-950 transition-colors mobile-nav-link">About</a>
             <a href="#security"
               class="text-slate-600 font-medium hover:text-slate-950 transition-colors mobile-nav-link">Security</a>
             <a href="#features"
               class="text-slate-600 font-medium hover:text-slate-950 transition-colors mobile-nav-link">Features</a>
+            <a href="#about"
+              class="text-slate-600 font-medium hover:text-slate-950 transition-colors mobile-nav-link">About</a>
             <a href="#contact"
               class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-cobalt-500 text-white text-sm font-semibold mobile-nav-link">Contact
               Us</a>
@@ -597,7 +572,7 @@
       </div>
     </section>
 
-    <section id="security" class="relative py-24 lg:py-36 bg-slate-50">
+    <section id="security" class="relative py-24 lg:py-36 bg-slate-50 overflow-hidden">
       <div class="section-divider absolute top-0 inset-x-0"></div>
 
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -871,9 +846,6 @@
           </div>
         </div>
       </div>
-
-      </div>
-      </div>
     </section>
 
     <section id="about" class="relative py-20 lg:py-36 bg-slate-50 overflow-hidden" aria-labelledby="about-title">
@@ -907,10 +879,10 @@
         <div class="reveal animate-fade-up delay-300 grid sm:grid-cols-2 gap-10 max-w-2xl mx-auto mb-20" role="list"
           aria-label="Team members">
           <div
-            class="profile-card flex flex-col items-center text-center p-6 rounded-2xl bg-white/50 backdrop-blur-sm border border-slate-200/50"
+            class="flex flex-col items-center text-center p-6 rounded-2xl bg-white/50 backdrop-blur-sm border border-slate-200/50"
             role="listitem">
             <div class="w-32 h-32 rounded-full bg-slate-200 border-4 border-white shadow-md overflow-hidden mb-4">
-              <img src="Elad_profile.png" alt="CEO Elad Rehani Profile" class="w-full h-full object-cover" />
+              <img src="Elad_profile.jpeg" alt="CEO Elad Rehani Profile" class="w-full h-full object-cover" />
             </div>
             <h3 class="text-lg font-bold text-slate-950">Elad Rehani</h3>
             <p class="text-sm font-medium text-cobalt-500">CEO & Co-Founder</p>
@@ -919,7 +891,7 @@
           <!-- Tomer's card temporarily hidden. To restore: uncomment this block and
                change the grid above back to "sm:grid-cols-3 ... max-w-4xl".
           <div
-            class="profile-card flex flex-col items-center text-center p-6 rounded-2xl bg-white/50 backdrop-blur-sm border border-slate-200/50"
+            class="flex flex-col items-center text-center p-6 rounded-2xl bg-white/50 backdrop-blur-sm border border-slate-200/50"
             role="listitem">
             <div class="w-32 h-32 rounded-full bg-slate-200 border-4 border-white shadow-md overflow-hidden mb-4">
               <img src="Tomer_profile.jpeg" alt="CTO Tomer Nosrati Profile" class="w-full h-full object-cover" />
@@ -930,7 +902,7 @@
           -->
 
           <div
-            class="profile-card flex flex-col items-center text-center p-6 rounded-2xl bg-white/50 backdrop-blur-sm border border-slate-200/50"
+            class="flex flex-col items-center text-center p-6 rounded-2xl bg-white/50 backdrop-blur-sm border border-slate-200/50"
             role="listitem">
             <div class="w-32 h-32 rounded-full bg-slate-200 border-4 border-white shadow-md overflow-hidden mb-4">
               <img src="Amit_profile.jpeg" alt="CMO Amit Amitai Profile" class="w-full h-full object-cover" />
@@ -942,13 +914,13 @@
 
         <div class="reveal animate-fade-up delay-300 max-w-3xl mx-auto">
           <div
-            class="animate-float accent-card relative p-8 lg:p-12 rounded-2xl text-center bg-white shadow-xl border border-slate-200">
+            class="accent-card relative p-8 lg:p-12 rounded-2xl text-center bg-white shadow-xl border border-slate-200">
             <h3 class="text-2xl font-bold text-slate-950 mb-4">Our Vision</h3>
             <p class="text-xl font-semibold text-cobalt-600 italic leading-relaxed mb-6">
               "A Future of Absolute Privacy"
             </p>
             <p class="text-slate-600 leading-relaxed">
-              We envision a world where information is transmitted seamlessly, securely, and privately. Sovereign control over your digital assets
+              We envision a world where information is transmitted seamlessly, securely, and privately, with sovereign control over your digital assets.
             </p>
           </div>
         </div>
@@ -1040,7 +1012,7 @@
 
               <h3 id="form-title" class="text-2xl font-bold text-slate-950 mb-2">Contact Us</h3>
               <p class="text-sm text-slate-500 mb-8">
-                Fill in your details and our team will reach you out.
+                Fill in your details and our team will reach out to you.
               </p>
 
               <div class="space-y-5">
@@ -1150,7 +1122,9 @@
       const cards = document.querySelectorAll('.orbit-card');
 
       let currentGlobalAngle = 0;
-      const baseSpeed = 0;
+      // Slow idle rotation; pauses while a card is focused
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const baseSpeed = reduceMotion ? 0 : 0.002;
 
       let activeCard = null;
       let activeCardIndex = -1;
@@ -1376,7 +1350,7 @@
           // Handle successful submission
           btn.innerHTML = `
               <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-              Send!
+              Sent!
             `;
           btn.classList.remove("bg-cobalt-500", "hover:bg-cobalt-600");
           btn.classList.add("bg-green-500");
@@ -1402,7 +1376,7 @@
           btn.innerHTML = originalText;
           btn.disabled = false;
           btn.classList.add("bg-cobalt-500", "hover:bg-cobalt-600");
-          btn.classList.remove("bg-green-500");
+          btn.classList.remove("bg-green-500", "bg-red-500");
         }, 3000);
       }
     });
